@@ -1,0 +1,167 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.layout-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.layout-header-inner {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+}
+
+.layout-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 18px;
+}
+
+/* Nav */
+.layout-nav {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.layout-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  font-weight: 500;
+  font-size: 14px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.layout-nav-link:hover {
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.layout-nav-link.active {
+  background: var(--color-primary-100);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Main */
+.layout-main {
+  flex: 1;
+  padding: var(--space-6) 0;
+}
+
+/* Footer */
+.layout-footer {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-4) 0;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* Mobile: reduce padding, allow header to wrap */
+@media (max-width: 640px) {
+  .layout-header-inner {
+    height: auto;
+    padding: 12px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+  .layout-nav {
+    width: 100%;
+  }
+  .layout-nav-link {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+  .layout-nav-link span {
+    display: none;         /* show icons only on small screens */
+  }
+  .layout-nav-link svg {
+    font-size: 18px;
+  }
+}
+
+/* ---------- Connection status indicator ---------- */
+.layout-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.layout-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.layout-status-dot-online   { background: var(--color-success); box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15); }
+.layout-status-dot-offline  { background: var(--color-danger);  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15); }
+.layout-status-dot-checking { background: var(--color-warning); animation: pulse 1.2s ease-in-out infinite; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.55; }
+  50%      { opacity: 1; }
+}
+
+.layout-status-text {
+  display: inline;
+}
+
+/* ---------- Page transition ---------- */
+.page-transition {
+  animation: page-fade-in 0.28s ease-out;
+}
+
+@keyframes page-fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  .layout-status-text {
+    display: none;      /* keep only the dot on phones */
+  }
+  .layout-status {
+    padding: 4px 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition,
+  .layout-status-dot-checking {
+    animation: none;
+  }
+}
+
+.layout-nav-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}

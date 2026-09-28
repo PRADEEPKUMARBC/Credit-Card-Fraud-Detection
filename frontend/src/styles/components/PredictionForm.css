@@ -1,0 +1,38 @@
+.predict-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.predict-form-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.predict-form-toolbar-actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.predict-form-toolbar-actions .btn {
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.predict-form-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.predict-form-footer .btn {
+  padding: 12px 24px;
+  font-size: 15px;
+}

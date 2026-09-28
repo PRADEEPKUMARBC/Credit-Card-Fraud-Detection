@@ -1,0 +1,14 @@
+{
+  "accuracy": 0.999365594050682,
+  "precision": 0.8314606741573034,
+  "recall": 0.7789473684210526,
+  "f1_score": 0.8043478260869565,
+  "roc_auc": 0.9526404049169013,
+  "true_positives": 74,
+  "true_negatives": 56636,
+  "false_positives": 15,
+  "false_negatives": 21,
+  "test_set_size": 56746,
+  "actual_frauds": 95,
+  "predicted_frauds": 89
+}

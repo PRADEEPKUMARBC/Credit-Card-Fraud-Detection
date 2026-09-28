@@ -1,0 +1,33 @@
+=================================================================
+CREDIT CARD FRAUD DETECTION - MODEL SUMMARY
+=================================================================
+Generated at      : 2026-09-27T17:46:02
+Model type        : RandomForestClassifier
+Number of trees   : 100
+Max depth         : 20
+Features in       : 30
+
+Preprocessing
+-----------------------------------------------------------------
+Scaled columns    : ['Time', 'Amount']
+Target column     : Class
+Random state      : 42
+Feature count     : 30
+Feature names     : ['Time', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'Amount']
+
+Evaluation Metrics (test set)
+-----------------------------------------------------------------
+accuracy            : 0.9994
+precision           : 0.8315
+recall              : 0.7789
+f1_score            : 0.8043
+roc_auc             : 0.9526
+true_positives      : 74
+true_negatives      : 56636
+false_positives     : 15
+false_negatives     : 21
+test_set_size       : 56746
+actual_frauds       : 95
+predicted_frauds    : 89
+
+=================================================================
